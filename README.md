@@ -4,7 +4,7 @@
 
 |    Submitted By    |        AmadIrfan(2021-CS-25)         |
 | :----------------: | :----------------------------------: |
-| **Project Name  ** | **Web Application with HTML & CSS3** |
+| **Project Name  ** | **Web Application with advanced CSS (SCSS SASS)** |
 
 ###***Description:***
 
