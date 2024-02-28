@@ -1,0 +1,20 @@
+$blackColor: #000
+$backgroundColor: #39db4a
+$whiteColor: #fff
+$bolderFont: bolder
+$hundredWidth: 100%
+$greyColor:#555555
+$redColor:#ff6868
+
+@mixin setWidth($width)
+    width: $width
+
+@mixin setHeight($height)
+    height: $height
+
+@mixin displayFlex($display:flex,$fd:row,$jc:space-between,$ai:center ,$fw:wrap)
+    display: $display
+    flex-direction: $fd
+    justify-content: $jc
+    align-items: $ai
+    flex-wrap: $fw

@@ -1,62 +1,52 @@
-* 
-  word-wrap: break-word
+@use 'method'
 
-.services-section 
-  display: flex
-  flex-direction: row
-  justify-content: space-between
-  align-items: center
-  padding: 1.5rem 3rem
+$fiftyWidth: 50%
+$hundredWidth: 100%
 
-.services-col1 
-  width: 50%
-  padding: 0 4rem
-  display: flex
-  flex-wrap: wrap
+@mixin setFontSize($fz)
+    font-size: $fz
 
-.services-col2 
-  width: 50%
-  display: flex
-  flex-direction: row
-  justify-content: center
-  align-items: center
+*
+    word-wrap: break-word
 
+.services-section
+    @include  displayFlex($fw:none)
+    padding: 1.5rem 3rem
 
-.img-row 
-  display: flex
-  width: 100%
-  flex-direction: column
-  justify-content: center
-  align-items: center
+.services-col1
+    width: $fiftyWidth
+    padding: 0 4rem
+    @include  displayFlex($fd:none, $jc:none,$ai:none)
 
+.services-col2
+    width: $fiftyWidth
+    @include  displayFlex( $jc:center,$ai:center,$fw:none)
 
-.services-title 
-  font-size: 2rem
-  font-weight: bold
+.img-row
+    @include  displayFlex($fd:column, $jc:center,$ai:center,$fw:none)
+    width: $hundredWidth
 
-.v 
-  width: 100%
-  height: 2rem
+.services-title
+    @include  setFontSize($fz: 2rem)
+    font-weight: bold
 
-.h 
-  /* width: 100% */
-  /* height: 2rem */
+.v
+    width: $hundredWidth
+    height: 2rem
 
+@media screen and (max-width: 768px)
+    .services-section
+        @include  displayFlex($fd:column ,$fw:none)
+        padding: 2rem 10px
 
-@media screen and (max-width: 768px) 
-  .services-section 
-    flex-direction: column
-    padding: 2rem 10px
-  
-  .services-col1 
-    width: 100%
-    padding: 10px 1rem
-  
-  .services-col2 
-    width: 100%
-    flex-direction: column
-  
-  .services-title 
-    font-size: 1.5rem
-  
+    .services-col1
+        width: $hundredWidth
+        padding: 10px 1rem
 
+    .services-col2
+        width: $hundredWidth
+        @include  displayFlex($fd:column ,$fw:none)
+
+    .services-title
+        @include setFontSize($fz: 1.5rem)
+        font-size: 1.5rem
